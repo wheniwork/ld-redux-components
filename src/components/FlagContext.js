@@ -1,4 +1,4 @@
-import React from "react";
-const FlagContext = React.createContext("");
+import React from 'react';
+const FlagContext = React.createContext('');
 
 export default FlagContext;

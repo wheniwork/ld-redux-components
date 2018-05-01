@@ -1,14 +1,15 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import FlagContext from "./FlagContext";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import FlagContext from './FlagContext';
 
 class Variant extends Component {
   render() {
-    const { children, name, isDefault } = this.props;
+    const { children, variation, isDefault } = this.props;
     return (
       <FlagContext.Consumer>
         {flagValue =>
-          (flagValue === name || (flagValue === null && isDefault)) && children
+          (flagValue === variation || (flagValue === null && isDefault)) &&
+          children
         }
       </FlagContext.Consumer>
     );
@@ -18,7 +19,7 @@ class Variant extends Component {
 Variant.propTypes = {
   children: PropTypes.node.isRequired,
   variation: PropTypes.string,
-  isDefault: PropTypes.bool
+  isDefault: PropTypes.bool,
 };
 
 export default Variant;

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import FlagContext from "./FlagContext";
-import Config from "../config";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import FlagContext from './FlagContext';
+import Config from '../config';
 
 class Feature extends Component {
   render() {
@@ -14,7 +14,7 @@ class Feature extends Component {
         : children;
 
     return (
-      <FlagContext.Provider value={flags[flagId]}>
+      <FlagContext.Provider value={ flags[flagId] }>
         {renderNode}
       </FlagContext.Provider>
     );
@@ -25,11 +25,11 @@ Feature.propTypes = {
   children: PropTypes.node.isRequired,
   flagId: PropTypes.string.isRequired,
   variation: PropTypes.any,
-  flags: PropTypes.object.isRequired
+  flags: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
-  flags: state[Config.settings.reduxKey]
+  flags: state[Config.settings.reduxKey],
 });
 
 export default connect(mapStateToProps)(Feature);

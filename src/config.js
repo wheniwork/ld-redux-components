@@ -9,7 +9,7 @@ class LDRComponentConfig {
 
   init(options) {
     this._settings = {
-      reduxKey: options.reduxKey
+      reduxKey: options.reduxKey,
     };
   }
 }
