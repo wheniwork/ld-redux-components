@@ -1,6 +1,6 @@
 class LDRComponentConfig {
   constructor() {
-    this._settings = {};
+    this._settings = Object.new();
   }
 
   get settings() {
@@ -9,6 +9,7 @@ class LDRComponentConfig {
 
   init(options) {
     this._settings = {
+      ...this._settings,
       reduxKey: options.reduxKey,
     };
   }
