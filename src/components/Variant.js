@@ -8,7 +8,8 @@ class Variant extends Component {
     return (
       <FlagContext.Consumer>
         {flagValue =>
-          (flagValue === variation || (flagValue === null && isDefault)) &&
+          ((variation !== undefined && flagValue === variation) ||
+            ([null, undefined].includes(flagValue) && isDefault)) &&
           children
         }
       </FlagContext.Consumer>

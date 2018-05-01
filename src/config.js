@@ -1,6 +1,6 @@
 class LDRComponentConfig {
   constructor() {
-    this._settings = Object.new();
+    this._settings = Object.create(null);
   }
 
   get settings() {
