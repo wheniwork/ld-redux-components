@@ -6,9 +6,6 @@ import FlagContext from "./FlagContext";
 import Config from "../config";
 
 class Feature extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const { children, flagId, variation, flags } = this.props;
 
