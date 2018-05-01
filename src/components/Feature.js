@@ -25,8 +25,7 @@ Feature.propTypes = {
   children: PropTypes.node.isRequired,
   flagId: PropTypes.string.isRequired,
   variation: PropTypes.any,
-  flags: PropTypes.object.isRequired,
-  waitForLD: PropTypes.bool
+  flags: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
