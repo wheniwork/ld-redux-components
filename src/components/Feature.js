@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import FlagContext from '../utils/FlagContext';
 import Config from '../config';
 
-class Feature extends Component {
+export class Feature extends Component {
   render() {
     const { children, flagId, variation, flags } = this.props;
 
