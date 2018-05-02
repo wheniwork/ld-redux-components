@@ -4,14 +4,12 @@ import FlagContext from '../utils/FlagContext';
 
 class Variant extends Component {
   render() {
-    const { children, variation, isDefault } = this.props;
+    const { variation, isDefault } = this.props;
     return (
       <FlagContext.Consumer>
-        {flagValue =>
-          ((variation !== undefined && flagValue === variation) ||
-            ([null, undefined].includes(flagValue) && isDefault)) &&
-          children
-        }
+        {flagValue => (
+          <VariantRenderer { ...props } { ...this.props } flagValue={ flagValue } />
+        )}
       </FlagContext.Consumer>
     );
   }
@@ -19,7 +17,7 @@ class Variant extends Component {
 
 Variant.propTypes = {
   children: PropTypes.node.isRequired,
-  variation: PropTypes.string,
+  variation: PropTypes.any,
   isDefault: PropTypes.bool,
 };
 
