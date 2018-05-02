@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import FlagContext from './FlagContext';
+import FlagContext from '../utils/FlagContext';
 import Config from '../config';
 
 class Feature extends Component {

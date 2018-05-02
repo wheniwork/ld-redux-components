@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import FlagContext from './FlagContext';
+import FlagContext from '../utils/FlagContext';
 
 class Variant extends Component {
   render() {
