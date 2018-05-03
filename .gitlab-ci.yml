@@ -1,0 +1,48 @@
+cache:
+  key: "${CI_COMMIT_REF_SLUG}"
+  paths:
+    - node_modules/
+
+stages:
+  - build
+  - test
+  - publish
+
+build:
+  image: registry.wheniwork.com/containers/node:8.9-alpine
+  stage: build
+  script:
+    - yarn install
+    - yarn build
+    - yarn test
+  artifacts:
+    untracked: true
+    expire_in: 10 minutes
+  tags:
+    - dind-development-xl
+
+test:
+  image: registry.wheniwork.com/containers/node:8.9-alpine
+  stage: test
+  script:
+    - yarn test
+  artifacts:
+    untracked: true
+    expire_in: 10 minutes
+  tags:
+    - dind-development-xl
+
+
+publish:
+  image: registry.wheniwork.com/containers/node:8.9-alpine
+  stage: publish
+  script:
+    - yarn publish
+  tags:
+    - dind-development-xl
+  artifacts:
+    paths:
+      - reports/coverage/lcov-report/
+    expire_in: 1 week
+  only:
+    - master
