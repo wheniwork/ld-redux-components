@@ -1,3 +1,10 @@
 /example
 /.vscode
 /coverage
+/spec
+/test
+.travis.yml
+.gitlab-ci.yml
+.babelrc
+.eslintignore
+.eslintrc
