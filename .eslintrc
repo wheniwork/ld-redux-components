@@ -1,10 +1,4 @@
 {
-  "globals": {
-    "Stripe": false,
-    "CONFIG": false,
-    "React": true,
-    "analytics": true
-  },
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
