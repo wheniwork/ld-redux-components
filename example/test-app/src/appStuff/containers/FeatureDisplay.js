@@ -1,18 +1,18 @@
-import React, { Component, Fragment } from "react";
-import Item from "./../components/item";
-import { Feature, Variant } from "ld-redux-components";
+import React, { Component, Fragment } from 'react';
+import Item from './../components/item';
+import { Feature, Variant } from 'ld-redux-components';
 
 export default class FeatureDisplay extends Component {
   render() {
     return (
       <Fragment>
-        <Feature flagId="test-flag-id" variation={true}>
+        <Feature flagId="testFlagId" variation={ true }>
           <Item name="FLAG IS TRUE" icon="smile" color="green" />
         </Feature>
-        <Feature flagId="test-flag-id" variation={false}>
+        <Feature flagId="testFlagId" variation={ false }>
           <Item name="FLAG IS FALSE" icon="frown" color="red" />
         </Feature>
-        <Feature flagId="test-flag-id" variation={null}>
+        <Feature flagId="testFlagId" variation={ null }>
           <Item name="FLAG IS NULL" icon="meh" color="blue" />
         </Feature>
       </Fragment>
