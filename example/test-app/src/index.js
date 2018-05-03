@@ -1,13 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import { Provider } from "react-redux";
-import { createStore } from "redux";
-import ldRedux from "ld-redux";
-import myApp from "./rootReducer";
-import registerServiceWorker from "./registerServiceWorker";
-import { ldrComponentConfig } from "ld-redux-components";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import ldRedux from 'ld-redux';
+import myApp from './rootReducer';
+import registerServiceWorker from './registerServiceWorker';
+import { ldrComponentConfig } from 'ld-redux-components';
 
 const store = createStore(
   myApp,
@@ -16,19 +16,19 @@ const store = createStore(
 );
 
 ldRedux.init({
-  clientSideId: "YOUR_CLIENT_SIDE_ID", //SET THIS TO SEE THE EXAMPLE
+  clientSideId: 'YOUR_CLIENT_SIDE_ID', //SET THIS TO SEE THE EXAMPLE
   store,
-  flags: { "test-flag-id": true } //SET THIS TO A REAL FLAG ID TO SEE AN EXAMPLE
+  flags: { 'test-flag-id': true }, //SET THIS TO A REAL FLAG ID TO SEE AN EXAMPLE
 });
 
 ldrComponentConfig.init({
-  reduxKey: "LD" //This value will be the key in your redux store where you flags are
+  reduxKey: 'LD', //This value will be the key in your redux store where you flags are
 });
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={ store }>
     <App />
   </Provider>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 registerServiceWorker();
