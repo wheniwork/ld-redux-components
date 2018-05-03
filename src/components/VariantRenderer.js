@@ -4,22 +4,23 @@ import PropTypes from 'prop-types';
 class VariantRenderer extends Component {
   render() {
     const { children, flagValue, variation, isDefault } = this.props;
+    const variationMatch = variation !== undefined && flagValue === variation;
+    const isDefaultMatch = [null, undefined].includes(flagValue) && isDefault;
     {
-      if (
-        (variation !== undefined && flagValue === variation) ||
-        ([null, undefined].includes(flagValue) && isDefault)
-      ) {
-        return { children };
+      if (variationMatch || isDefaultMatch) {
+        return children;
+      } else {
+        return null;
       }
     }
   }
 }
 
-VariantRender.propTypes = {
+VariantRenderer.propTypes = {
   children: PropTypes.node.isRequired,
   flagValue: PropTypes.any.isRequired,
   variation: PropTypes.any,
   isDefault: PropTypes.bool,
 };
 
-export default VariantRender;
+export default VariantRenderer;
