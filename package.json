@@ -11,9 +11,9 @@
     "build": "./node_modules/.bin/babel src --out-dir build",
     "clean": "rimraf build",
     "prepare": "yarn clean && yarn build",
-    "lint": "./node_modules/.bin/eslint src test",
-    "test": "./node_modules/.bin/jest",
-    "test-all": "yarn lint && yarn test"
+    "lint": "./node_modules/.bin/eslint src test spec",
+    "unit": "./node_modules/.bin/jest",
+    "test": "yarn lint && yarn unit"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/test/setup.js",

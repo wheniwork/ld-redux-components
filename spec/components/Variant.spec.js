@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import FlagContext from '../../src/utils/FlagContext';
 import Variant from '../../src/components/Variant';
 
 describe('Variant', () => {
@@ -11,7 +10,6 @@ describe('Variant', () => {
         <div>Hello</div>
       </Variant>
     );
-    console.log(wrapper.props());
     expect(wrapper.props('flagValue')).to.equal(true);
   });
 });
