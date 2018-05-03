@@ -1,4 +1,4 @@
-class LDRComponentConfig {
+export class LDRComponentConfig {
   constructor() {
     this._settings = Object.create(null);
   }
