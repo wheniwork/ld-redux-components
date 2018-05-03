@@ -37,12 +37,12 @@ publish:
   image: registry.wheniwork.com/containers/node:8.9-alpine
   stage: publish
   script:
-    - yarn publish
+    - npm publish
   tags:
     - dind-development-xl
   artifacts:
     paths:
-      - reports/coverage/lcov-report/
+      - coverage/lcov-report/
     expire_in: 1 week
   only:
     - master
