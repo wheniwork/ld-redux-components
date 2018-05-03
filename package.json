@@ -10,7 +10,7 @@
   "scripts": {
     "build": "./node_modules/.bin/babel src --out-dir build",
     "clean": "rimraf build",
-    "prepare": "yarn clean && yarn build",
+    "prepare": "yarn clean",
     "lint": "./node_modules/.bin/eslint src test spec example",
     "unit": "./node_modules/.bin/jest",
     "test": "yarn lint && yarn unit"
