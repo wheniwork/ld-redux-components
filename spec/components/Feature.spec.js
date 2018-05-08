@@ -17,7 +17,7 @@ describe('Feature', () => {
     expect(feature.find('#match').length).toBe(1);
   });
 
-  it('will render children if variation prop is set to the correct value', () => {
+  it('will render children if variation prop is set to the flag value', () => {
     const feature = shallow(
       <Feature variation={ true }>
         <div id="match">Hello</div>
@@ -26,9 +26,27 @@ describe('Feature', () => {
     expect(feature.find('#match').length).toBe(1);
   });
 
-  it('will not render children if variation prop is set to the incorrect value', () => {
+  it('will not render children if variation prop is set to the incorrect flag value', () => {
     const feature = shallow(
       <Feature variation={ false }>
+        <div id="match">Hello</div>
+      </Feature>
+    );
+    expect(feature.find('#match').length).toBe(0);
+  });
+
+  it('will render children if varation prop is an array and includes the flag value', () => {
+    const feature = shallow(
+      <Feature variation={ [true, 'test'] }>
+        <div id="match">Hello</div>
+      </Feature>
+    );
+    expect(feature.find('#match').length).toBe(1);
+  });
+
+  it('will not ender children if varation prop is an array and does not include the flag value', () => {
+    const feature = shallow(
+      <Feature variation={ [false, 'test'] }>
         <div id="match">Hello</div>
       </Feature>
     );

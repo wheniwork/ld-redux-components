@@ -4,7 +4,14 @@ import PropTypes from 'prop-types';
 class VariantRenderer extends Component {
   render() {
     const { children, flagValue, variation, isDefault } = this.props;
-    const variationMatch = variation !== undefined && flagValue === variation;
+
+    let variationMatch = false;
+    if (Array.isArray(variation)) {
+      variationMatch = variation.includes(flagValue);
+    } else if (['string', 'boolean', 'null'].includes(typeof variation)) {
+      variationMatch = flagValue === variation;
+    }
+
     const isDefaultMatch = [null, undefined].includes(flagValue) && isDefault;
     {
       if (variationMatch || isDefaultMatch) {

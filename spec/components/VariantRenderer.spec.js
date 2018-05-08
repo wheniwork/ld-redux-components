@@ -47,4 +47,22 @@ describe('VariantRenderer', () => {
     expect(feature.find('#match').length).toBe(1);
     expect(feature2.find('#match').length).toBe(1);
   });
+
+  it('will render children if varation prop is an array and includes the flag value', () => {
+    const feature = shallow(
+      <VariantRenderer flagValue={ true } variation={ ['test', true] }>
+        <div id="match">Hello</div>
+      </VariantRenderer>
+    );
+    expect(feature.find('#match').length).toBe(1);
+  });
+
+  it('will not ender children if varation prop is an array and does not include the flag value', () => {
+    const feature = shallow(
+      <VariantRenderer flagValue={ true } variation={ ['test', false] }>
+        <div id="match">Hello</div>
+      </VariantRenderer>
+    );
+    expect(feature.find('#match').length).toBe(0);
+  });
 });
