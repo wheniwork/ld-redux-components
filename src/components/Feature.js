@@ -8,10 +8,14 @@ export class Feature extends Component {
   render() {
     const { children, flagId, variation, flags } = this.props;
 
+    let variationMatch = false;
+    if (Array.isArray(variation)) {
+      variationMatch = variation.includes(flags[flagId]);
+    } else if (['string', 'boolean', 'null'].includes(typeof variation)) {
+      variationMatch = flags[flagId] === variation;
+    }
     const renderNode =
-      variation !== undefined
-        ? flags[flagId] === variation && children
-        : children;
+      variation !== undefined ? variationMatch && children : children;
 
     return (
       <FlagContext.Provider value={ flags[flagId] }>
