@@ -39,7 +39,7 @@ publish:
   script:
     - npm publish
   tags:
-    - dind-development-xl
+    - dind-production
   artifacts:
     paths:
       - coverage/lcov-report/
