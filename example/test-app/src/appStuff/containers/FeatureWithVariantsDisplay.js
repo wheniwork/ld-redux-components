@@ -7,10 +7,10 @@ export default class FeatureWithVariantsDisplay extends Component {
     return (
       <Fragment>
         <Feature flagId="test-flag-id">
-          <Variant name={ true }>
+          <Variant variation={ true }>
             <Item name="FLAG IS TRUE" icon="smile" color="green" />
           </Variant>
-          <Variant name={ false }>
+          <Variant variation={ false }>
             <Item name="FLAG IS FALSE" icon="frown" color="red" />
           </Variant>
           <Variant isDefault>
