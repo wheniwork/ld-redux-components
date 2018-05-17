@@ -73,8 +73,6 @@ export default class FeatureDisplay extends Component {
 
 Boom! `ld-redux-components` is working!
 
-#
-
 ## Components
 
 ### `Feature`
@@ -261,8 +259,6 @@ export default class FeatureWithVariantsDisplay extends Component {
 ## Misc.
 
 For a working example, check this [example app](https://github.com/wheniwork/ld-redux-components/tree/master/example/test-app) out (you'll need to provide your own credentials and flags to get things working locally)
-
-# 
 
 ## Contributions
 
