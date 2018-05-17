@@ -56,10 +56,10 @@ export default class FeatureDisplay extends Component {
   render() {
     return (
       <Feature flagId="testFlagId">
-        <Variant variation={true}>
+        <Variant variation={ true }>
           <Item name="FLAG IS TRUE" icon="smile" color="green" />
         </Variant>
-        <Variant variation={false}>
+        <Variant variation={ false }>
           <Item name="FLAG IS FALSE" icon="frown" color="red" />
         </Variant>
         <Variant isDefault>
@@ -103,10 +103,10 @@ export default class Display extends Component {
   render() {
     return (
       <Feature flagId="testFlagId">
-        <Variant variation={true}>
+        <Variant variation={ true }>
           <Item name="FLAG IS TRUE" icon="smile" color="green" />
         </Variant>
-        <Variant variation={false}>
+        <Variant variation={ false }>
           <Item name="FLAG IS FALSE" icon="frown" color="red" />
         </Variant>
       </Feature>
@@ -163,10 +163,10 @@ export default class Display extends Component {
   render() {
     return (
       <Feature flagId="testFlagId">
-        <Variant variation={true}>
+        <Variant variation={ true }>
           <Item name="FLAG IS TRUE" icon="smile" color="green" />
         </Variant>
-        <Variant variation={false}>
+        <Variant variation={ false }>
           <Item name="FLAG IS FALSE" icon="frown" color="red" />
         </Variant>
       </Feature>
@@ -186,10 +186,10 @@ export default class Display extends Component {
   render() {
     return (
       <Feature flagId="testFlagId">
-        <Variant variation={"control"}>
+        <Variant variation="control">
           <Item name="FLAG IS TRUE" icon="smile" color="green" />
         </Variant>
-        <Variant variation={["treatment", "none"]}>
+        <Variant variation={ ["treatment", "none"] }>
           <Item name="FLAG IS FALSE" icon="frown" color="red" />
         </Variant>
       </Feature>
@@ -260,11 +260,11 @@ export default class Display extends Component {
       <Feature flagId="testFlagId">
         <Variant variation={ true }>
           <Feature flagId="anotherFlagId">
-            <Variant variation={ "on" }>
+            <Variant variation="on">
               <Item name="FLAG IS ON" icon="smile" color="green" />
             </Variant>
-            <Variant variation={ "off" }>
-              <Item name="FLAG IS OFF icon="frown" color="red" />
+            <Variant variation="off">
+              <Item name="FLAG IS OFF" icon="frown" color="red" />
             </Variant>
           </Feature>
         </Variant>
