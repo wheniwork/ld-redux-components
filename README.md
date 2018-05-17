@@ -2,7 +2,7 @@
 
 > Feature Flag Components for Launch Darkly that work seemlessly with redux
 
-_ld-redux-components_ is a component helper library for Launch Darkly in React that relies on your feature flags being stored in redux.
+_ld-redux-components_ is a helper library for Launch Darkly in React that relies on your feature flags being stored in redux.
 
 It is recommended that you use [ld-redux](https://github.com/yusinto/ld-redux), as it provides an easy and clean way to connect Launch Darkly flags to redux, and works as a nice wrapper for [ldclient-js](https://github.com/launchdarkly/js-client).
 
@@ -22,7 +22,7 @@ You should define your Launch Darkly redux strategy before using _ld-redux-compo
 }
 ```
 
-(note: the above example is using `camelCase` as _ld-redux_ does, but you can store the flags as `lisp-case` if you choose)
+(note: the above example is using `camelCase` as _ld-redux_ does, but you can store the flags as `lisp-case` if you so choose)
 
 ## Installation
 
@@ -63,7 +63,7 @@ export default class FeatureDisplay extends Component {
           <Item name="FLAG IS FALSE" icon="frown" color="red" />
         </Variant>
         <Variant isDefault>
-          <Item name="FLAG IS NULL" icon="meh" color="blue" />
+          <Item name="FLAG IS NULL/UNDEFINED" icon="meh" color="blue" />
         </Variant>
       </Feature>
     );
