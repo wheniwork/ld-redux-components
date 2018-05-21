@@ -1,5 +1,7 @@
 # ld-redux-components
 
+[![npm version](https://img.shields.io/npm/v/ld-redux-components.svg?style=flat-square)](https://www.npmjs.com/package/ld-redux-components) [![npm version](https://img.shields.io/npm/dm/ld-redux-components.svg?style=flat-square)](https://www.npmjs.com/package/ld-redux-components) [![npm version](https://img.shields.io/npm/dt/ld-redux-components.svg?style=flat-square)](https://www.npmjs.com/package/ld-redux-components) [![npm version](https://img.shields.io/npm/l/ld-redux-components.svg?style=flat-square)](https://github.com/wheniwork/ld-redux-components/blob/master/LICENSE) ![build](https://api.travis-ci.org/wheniwork/ld-redux-components.svg?branch=master)
+
 > Feature Flag Components for Launch Darkly that work seemlessly with redux
 
 _ld-redux-components_ is a helper library for Launch Darkly in React that relies on your feature flags being stored in redux.

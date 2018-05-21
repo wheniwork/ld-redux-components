@@ -1,8 +1,8 @@
 {
   "name": "ld-redux-components",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description":
-    "Launch Darkly Helper Components that leverage the ld-redux libary",
+    "Launch Darkly Helper Components that leverage redux",
   "main": "build/index.js",
   "repository": "https://github.com/wheniwork/ld-redux-components.git",
   "author": "Max Lund <lundmax@gmail.com>",
