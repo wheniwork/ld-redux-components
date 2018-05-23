@@ -57,6 +57,5 @@ describe('Feature', () => {
     const feature = shallow(
       <Feature variation={ true } />
     );
-
   });
 });
