@@ -52,4 +52,11 @@ describe('Feature', () => {
     );
     expect(feature.find('#match').length).toBe(0);
   });
+
+  it('will not break if no children are provided', () => {
+    const feature = shallow(
+      <Feature variation={ true } />
+    );
+
+  });
 });
