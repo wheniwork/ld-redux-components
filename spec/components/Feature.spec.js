@@ -54,7 +54,7 @@ describe('Feature', () => {
   });
 
   it('will not break if no children are provided', () => {
-    const feature = shallow(
+    shallow(
       <Feature variation={ true } />
     );
   });

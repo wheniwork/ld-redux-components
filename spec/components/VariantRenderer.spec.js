@@ -67,7 +67,7 @@ describe('VariantRenderer', () => {
   });
 
   it('will not break if no children are provided', () => {
-    const feature = shallow(
+    shallow(
       <VariantRenderer flagValue={ true } variation={ true } />
     );
 
