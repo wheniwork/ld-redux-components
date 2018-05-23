@@ -22,7 +22,7 @@ describe('Variant', () => {
   it('will not break if children are not present', () => {
     const wrapper = shallow(
       <Feature>
-      <Variant variation={ true } />
+        <Variant variation={ true } />
       </Feature>
     );
   })
