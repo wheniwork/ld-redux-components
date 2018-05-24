@@ -26,7 +26,7 @@ export class Feature extends Component {
 }
 
 Feature.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   flagId: PropTypes.string.isRequired,
   variation: PropTypes.any,
   flags: PropTypes.object.isRequired,

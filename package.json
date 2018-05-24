@@ -1,6 +1,6 @@
 {
   "name": "ld-redux-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description":
     "Launch Darkly Helper Components that leverage redux",
   "main": "build/index.js",

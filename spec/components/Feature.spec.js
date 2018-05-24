@@ -44,12 +44,18 @@ describe('Feature', () => {
     expect(feature.find('#match').length).toBe(1);
   });
 
-  it('will not ender children if varation prop is an array and does not include the flag value', () => {
+  it('will not render children if varation prop is an array and does not include the flag value', () => {
     const feature = shallow(
       <Feature variation={ [false, 'test'] }>
         <div id="match">Hello</div>
       </Feature>
     );
     expect(feature.find('#match').length).toBe(0);
+  });
+
+  it('will not break if no children are provided', () => {
+    shallow(
+      <Feature variation={ true } />
+    );
   });
 });

@@ -14,7 +14,7 @@ class Variant extends Component {
 }
 
 Variant.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   variation: PropTypes.any,
   isDefault: PropTypes.bool,
 };

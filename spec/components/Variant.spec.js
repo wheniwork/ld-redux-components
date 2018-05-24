@@ -1,6 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { Feature } from '../../src/components/Feature';
 import Variant from '../../src/components/Variant';
+
+Feature.defaultProps = {
+  flagId: 'testFlag',
+  flags: { testFlag: true },
+};
 
 describe('Variant', () => {
   // THIS CANNOT BE TESTED UNTIL https://github.com/airbnb/enzyme/pull/1513 is released
@@ -11,5 +17,13 @@ describe('Variant', () => {
       </Variant>
     );
     expect(wrapper.props('flagValue')).to.equal(true);
+  });
+
+  it('will not break if children are not present', () => {
+    shallow(
+      <Feature>
+        <Variant variation={ true } />
+      </Feature>
+    );
   });
 });

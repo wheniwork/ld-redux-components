@@ -24,7 +24,7 @@ class VariantRenderer extends Component {
 }
 
 VariantRenderer.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   flagValue: PropTypes.any,
   variation: PropTypes.any,
   isDefault: PropTypes.bool,
