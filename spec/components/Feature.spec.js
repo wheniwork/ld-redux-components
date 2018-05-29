@@ -69,7 +69,7 @@ describe('Feature', () => {
     expect(onReadySpy).toHaveBeenCalledTimes(1);
   });
 
-  it('will call onReady when launch darkly server is connected only once', () => {
+  it('will call onReady when launch darkly server is already connected (only once)', () => {
     const onReadySpy = jest.fn();
     shallow(
       <Feature onReady={ onReadySpy } flags={ { isLDReady: true } } />
