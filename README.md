@@ -39,7 +39,7 @@ npm install ld-redux-components
 1.  In your client bootstrap, initialize _ld-redux-components_:
 
 ```jsx
-import { ldrComponentConfig } from "ld-redux-components";
+import { ldrComponentConfig } from 'ld-redux-components';
 
 //This value will be the key in your redux store where your flags are stored
 ldrComponentConfig.init({
@@ -50,18 +50,18 @@ ldrComponentConfig.init({
 2.  Import and use `Feature` and `Variant` helper components in a component:
 
 ```jsx
-import React, { Component } from "react";
-import { Feature, Variant } from "ld-redux-components";
-import { Item } from "<my-app>/item";
+import React, { Component } from 'react';
+import { Feature, Variant } from 'ld-redux-components';
+import { Item } from '<my-app>/item';
 
 export default class FeatureDisplay extends Component {
   render() {
     return (
       <Feature flagId="testFlagId">
-        <Variant variation={true}>
+        <Variant variation={ true }>
           <Item name="FLAG IS TRUE" icon="smile" color="green" />
         </Variant>
-        <Variant variation={false}>
+        <Variant variation={ false }>
           <Item name="FLAG IS FALSE" icon="frown" color="red" />
         </Variant>
         <Variant isDefault>
@@ -99,18 +99,18 @@ Boom! `ld-redux-components` is working! Notice how there is no need to connect y
 `Feature`
 
 ```jsx
-import React, { Component } from "react";
-import { Feature, Variant } from "ld-redux-components";
-import { Item } from "<my-app>/item";
+import React, { Component } from 'react';
+import { Feature, Variant } from 'ld-redux-components';
+import { Item } from '<my-app>/item';
 
 export default class Display extends Component {
   render() {
     return (
       <Feature flagId="testFlagId">
-        <Variant variation={true}>
+        <Variant variation={ true }>
           <Item name="FLAG IS TRUE" icon="smile" color="green" />
         </Variant>
-        <Variant variation={false}>
+        <Variant variation={ false }>
           <Item name="FLAG IS FALSE" icon="frown" color="red" />
         </Variant>
       </Feature>
@@ -122,14 +122,14 @@ export default class Display extends Component {
 `Feature` with `variation` prop set and no `Variant` components
 
 ```jsx
-import React, { Component } from "react";
-import { Feature } from "ld-redux-components";
-import { Item } from "<my-app>/item";
+import React, { Component } from 'react';
+import { Feature } from 'ld-redux-components';
+import { Item } from '<my-app>/item';
 
 export default class Display extends Component {
   render() {
     return (
-      <Feature flagId="testFlagId" variation={true}>
+      <Feature flagId="testFlagId" variation={ true }>
         <Item name="FLAG IS TRUE" icon="smile" color="green" />
       </Feature>
     );
@@ -159,18 +159,18 @@ export default class Display extends Component {
 Two Variants
 
 ```jsx
-import React, { Component, Fragment } from "react";
-import { Feature, Variant } from "ld-redux-components";
-import { Item } from "<my-app>/item";
+import React, { Component, Fragment } from 'react';
+import { Feature, Variant } from 'ld-redux-components';
+import { Item } from '<my-app>/item';
 
 export default class Display extends Component {
   render() {
     return (
       <Feature flagId="testFlagId">
-        <Variant variation={true}>
+        <Variant variation={ true }>
           <Item name="FLAG IS TRUE" icon="smile" color="green" />
         </Variant>
-        <Variant variation={false}>
+        <Variant variation={ false }>
           <Item name="FLAG IS FALSE" icon="frown" color="red" />
         </Variant>
       </Feature>
@@ -182,9 +182,9 @@ export default class Display extends Component {
 Multiple Variants
 
 ```jsx
-import React, { Component, Fragment } from "react";
-import { Feature, Variant } from "ld-redux-components";
-import { Item } from "<my-app>/item";
+import React, { Component, Fragment } from 'react';
+import { Feature, Variant } from 'ld-redux-components';
+import { Item } from '<my-app>/item';
 
 export default class Display extends Component {
   render() {
@@ -193,7 +193,7 @@ export default class Display extends Component {
         <Variant variation="control">
           <Item name="FLAG IS TRUE" icon="smile" color="green" />
         </Variant>
-        <Variant variation={["treatment", "none"]}>
+        <Variant variation={ ["treatment", "none"] }>
           <Item name="FLAG IS FALSE" icon="frown" color="red" />
         </Variant>
       </Feature>
@@ -205,15 +205,15 @@ export default class Display extends Component {
 Variant with isDefault
 
 ```jsx
-import React, { Component, Fragment } from "react";
-import { Feature, Variant } from "ld-redux-components";
-import { Item } from "<my-app>/item";
+import React, { Component, Fragment } from 'react';
+import { Feature, Variant } from 'ld-redux-components';
+import { Item } from '<my-app>/item';
 
 export default class Display extends Component {
   render() {
     return (
       <Feature flagId="testFlagId">
-        <Variant variation={true}>
+        <Variant variation={ true }>
           <Item name="FLAG IS TRUE" icon="smile" color="green" />
         </Variant>
         <Variant isDefault>
@@ -228,21 +228,21 @@ export default class Display extends Component {
 Deeply Nested Variant
 
 ```jsx
-import React, { Component, Fragment } from "react";
-import { Feature, Variant } from "ld-redux-components";
-import { Item } from "<my-app>/item";
-import { SomeOtherComponent } from "<my-app>/someOtherComponent";
+import React, { Component, Fragment } from 'react';
+import { Feature, Variant } from 'ld-redux-components';
+import { Item } from '<my-app>/item';
+import { SomeOtherComponent } from '<my-app>/someOtherComponent';
 
 export default class Display extends Component {
   render() {
     return (
       <Feature flagId="testFlagId">
         <SomeOtherComponent>
-          <Variant variation={true}>
+          <Variant variation={ true }>
             <Item name="FLAG IS TRUE" icon="smile" color="green" />
           </Variant>
         </SomeOtherComponent>
-        <Variant variation={false}>
+        <Variant variation={ false }>
           <Item name="FLAG IS FALSE" icon="frown" color="red" />
         </Variant>
       </Feature>
@@ -254,15 +254,15 @@ export default class Display extends Component {
 Feature/Variants Nested under Feature/Variants
 
 ```jsx
-import React, { Component, Fragment } from "react";
-import { Feature, Variant } from "ld-redux-components";
-import { Item } from "<my-app>/item";
+import React, { Component, Fragment } from 'react';
+import { Feature, Variant } from 'ld-redux-components';
+import { Item } from '<my-app>/item';
 
 export default class Display extends Component {
   render() {
     return (
       <Feature flagId="testFlagId">
-        <Variant variation={true}>
+        <Variant variation={ true }>
           <Feature flagId="anotherFlagId">
             <Variant variation="on">
               <Item name="FLAG IS ON" icon="smile" color="green" />
@@ -272,7 +272,7 @@ export default class Display extends Component {
             </Variant>
           </Feature>
         </Variant>
-        <Variant variation={false}>
+        <Variant variation={ false }>
           <Item name="FLAG IS FALSE" icon="frown" color="red" />
         </Variant>
       </Feature>
