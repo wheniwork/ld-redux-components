@@ -31,14 +31,16 @@ export class Feature extends Component {
       variationMatch = flags[flagId] === variation;
     }
 
-    let renderNode =
-      variation !== undefined ? variationMatch && children : children;
-
-    renderNode = waitForLD ? flags.isLDReady && renderNode : renderNode;
+    if (variation !== undefined && !variationMatch) {
+      return null;
+    } 
+    if (waitForLD && !flags.isLDReady) {
+      return null;
+    }
 
     return (
       <FlagContext.Provider value={ flags[flagId] }>
-        {renderNode}
+        {children}
       </FlagContext.Provider>
     );
   }
