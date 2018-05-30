@@ -5,8 +5,24 @@ import FlagContext from '../utils/FlagContext';
 import Config from '../config';
 
 export class Feature extends Component {
+  componentDidMount() {
+    if (this.props.flags.isLDReady && this.props.onReady) {
+      this.props.onReady();
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (
+      !prevProps.flags.isLDReady &&
+      this.props.flags.isLDReady &&
+      this.props.onReady
+    ) {
+      this.props.onReady();
+    }
+  }
+
   render() {
-    const { children, flagId, variation, flags } = this.props;
+    const { children, flagId, variation, flags, waitForLD } = this.props;
 
     let variationMatch = false;
     if (Array.isArray(variation)) {
@@ -14,12 +30,17 @@ export class Feature extends Component {
     } else if (['string', 'boolean', 'null'].includes(typeof variation)) {
       variationMatch = flags[flagId] === variation;
     }
-    const renderNode =
-      variation !== undefined ? variationMatch && children : children;
+
+    if (variation !== undefined && !variationMatch) {
+      return null;
+    } 
+    if (waitForLD && !flags.isLDReady) {
+      return null;
+    }
 
     return (
       <FlagContext.Provider value={ flags[flagId] }>
-        {renderNode}
+        {children}
       </FlagContext.Provider>
     );
   }
@@ -30,6 +51,8 @@ Feature.propTypes = {
   flagId: PropTypes.string.isRequired,
   variation: PropTypes.any,
   flags: PropTypes.object.isRequired,
+  onReady: PropTypes.func,
+  waitForLD: PropTypes.bool,
 };
 
 const mapStateToProps = state => ({

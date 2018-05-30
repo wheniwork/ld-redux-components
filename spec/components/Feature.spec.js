@@ -58,4 +58,33 @@ describe('Feature', () => {
       <Feature variation={ true } />
     );
   });
+
+  it('will call onReady when launch darkly server has connected', () => {
+    const onReadySpy = jest.fn();
+    const wrapper = shallow(
+      <Feature onReady={ onReadySpy } flags={ { isLDReady: false } } />
+    );
+    expect(onReadySpy).toHaveBeenCalledTimes(0);
+    wrapper.setProps({ flags: { isLDReady: true } });
+    expect(onReadySpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('will call onReady when launch darkly server is already connected (only once)', () => {
+    const onReadySpy = jest.fn();
+    shallow(
+      <Feature onReady={ onReadySpy } flags={ { isLDReady: true } } />
+    );
+    expect(onReadySpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('will not render until ld server connects when "waitForLD" prop is set to true', () => {
+    const wrapper = shallow(
+      <Feature waitForLD flags={ { isLDReady: false } } >
+        <div id="match">Hello</div>
+      </Feature>
+    );
+    expect(wrapper.find('#match').length).toBe(0);
+    wrapper.setProps({ flags: { isLDReady: true } });
+    expect(wrapper.find('#match').length).toBe(1);
+  });
 });

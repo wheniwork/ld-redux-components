@@ -39,7 +39,7 @@ npm install ld-redux-components
 1.  In your client bootstrap, initialize _ld-redux-components_:
 
 ```jsx
-import { ldrComponentConfig } from "ld-redux-components";
+import { ldrComponentConfig } from 'ld-redux-components';
 
 //This value will be the key in your redux store where your flags are stored
 ldrComponentConfig.init({
@@ -50,9 +50,9 @@ ldrComponentConfig.init({
 2.  Import and use `Feature` and `Variant` helper components in a component:
 
 ```jsx
-import React, { Component } from "react";
-import { Feature, Variant } from "ld-redux-components";
-import { Item } from "<my-app>/item";
+import React, { Component } from 'react';
+import { Feature, Variant } from 'ld-redux-components';
+import { Item } from '<my-app>/item';
 
 export default class FeatureDisplay extends Component {
   render() {
@@ -81,10 +81,12 @@ Boom! `ld-redux-components` is working! Notice how there is no need to connect y
 
 #### props
 
-| name        | type                      | required | default | description                  |
-| ----------- | ------------------------- | -------- | ------- | ---------------------------- |
-| `flagName`  | string                    | `true`   | -       | name of flag stored in redux |
-| `variation` | string, bool, array, null | `false`  | -       | value of flag                |
+| name        | type                      | required | default | description                       |
+| ----------- | ------------------------- | -------- | ------- | --------------------------------- |
+| `flagName`  | string                    | `true`   | -       | name of flag stored in redux      |
+| `variation` | string, bool, array, null | `false`  | -       | value of flag                     |
+| `onReady`   | function                  | `false`  | -       | callback fired when ld connected  |
+| `waitForLD` | bool                      | `false`  | `false` | wait to render until ld connected |
 
 #### Usage Details
 
@@ -97,9 +99,9 @@ Boom! `ld-redux-components` is working! Notice how there is no need to connect y
 `Feature`
 
 ```jsx
-import React, { Component } from "react";
-import { Feature, Variant } from "ld-redux-components";
-import { Item } from "<my-app>/item";
+import React, { Component } from 'react';
+import { Feature, Variant } from 'ld-redux-components';
+import { Item } from '<my-app>/item';
 
 export default class Display extends Component {
   render() {
@@ -120,9 +122,9 @@ export default class Display extends Component {
 `Feature` with `variation` prop set and no `Variant` components
 
 ```jsx
-import React, { Component } from "react";
-import { Feature } from "ld-redux-components";
-import { Item } from "<my-app>/item";
+import React, { Component } from 'react';
+import { Feature } from 'ld-redux-components';
+import { Item } from '<my-app>/item';
 
 export default class Display extends Component {
   render() {
@@ -157,9 +159,9 @@ export default class Display extends Component {
 Two Variants
 
 ```jsx
-import React, { Component, Fragment } from "react";
-import { Feature, Variant } from "ld-redux-components";
-import { Item } from "<my-app>/item";
+import React, { Component, Fragment } from 'react';
+import { Feature, Variant } from 'ld-redux-components';
+import { Item } from '<my-app>/item';
 
 export default class Display extends Component {
   render() {
@@ -180,9 +182,9 @@ export default class Display extends Component {
 Multiple Variants
 
 ```jsx
-import React, { Component, Fragment } from "react";
-import { Feature, Variant } from "ld-redux-components";
-import { Item } from "<my-app>/item";
+import React, { Component, Fragment } from 'react';
+import { Feature, Variant } from 'ld-redux-components';
+import { Item } from '<my-app>/item';
 
 export default class Display extends Component {
   render() {
@@ -203,9 +205,9 @@ export default class Display extends Component {
 Variant with isDefault
 
 ```jsx
-import React, { Component, Fragment } from "react";
-import { Feature, Variant } from "ld-redux-components";
-import { Item } from "<my-app>/item";
+import React, { Component, Fragment } from 'react';
+import { Feature, Variant } from 'ld-redux-components';
+import { Item } from '<my-app>/item';
 
 export default class Display extends Component {
   render() {
@@ -214,7 +216,7 @@ export default class Display extends Component {
         <Variant variation={ true }>
           <Item name="FLAG IS TRUE" icon="smile" color="green" />
         </Variant>
-        <Variant isDefault >
+        <Variant isDefault>
           <Item name="FLAG IS NULL/UNDEFINED" icon="meh" color="yellow" />
         </Variant>
       </Feature>
@@ -228,8 +230,8 @@ Deeply Nested Variant
 ```jsx
 import React, { Component, Fragment } from 'react';
 import { Feature, Variant } from 'ld-redux-components';
-import { Item } from "<my-app>/item";
-import { SomeOtherComponent } from "<my-app>/someOtherComponent";
+import { Item } from '<my-app>/item';
+import { SomeOtherComponent } from '<my-app>/someOtherComponent';
 
 export default class Display extends Component {
   render() {
@@ -254,7 +256,7 @@ Feature/Variants Nested under Feature/Variants
 ```jsx
 import React, { Component, Fragment } from 'react';
 import { Feature, Variant } from 'ld-redux-components';
-import { Item } from "<my-app>/item";
+import { Item } from '<my-app>/item';
 
 export default class Display extends Component {
   render() {
