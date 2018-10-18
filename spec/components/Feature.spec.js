@@ -5,6 +5,7 @@ import { Feature } from '../../src/components/Feature';
 Feature.defaultProps = {
   flagId: 'testFlag',
   flags: { testFlag: true },
+  liveUpdate: true,
 };
 
 describe('Feature', () => {
@@ -86,5 +87,33 @@ describe('Feature', () => {
     expect(wrapper.find('#match').length).toBe(0);
     wrapper.setProps({ flags: { isLDReady: true } });
     expect(wrapper.find('#match').length).toBe(1);
+  });
+
+  it('will rerender the component if liveUpdate prop is set to true, and a flag is changed after initial load', () => {
+    const mock = jest.spyOn(Feature.prototype, 'render').mockImplementation(() => null);
+    const wrapper = shallow(
+      <Feature flags={ { isLDReady: true } } >
+        <div id="match">Hello</div>
+      </Feature>
+    );
+    
+    expect(Feature.prototype.render).toHaveBeenCalledTimes(1);
+    wrapper.setProps({ flags: { testFlag: false } });
+    expect(Feature.prototype.render).toHaveBeenCalledTimes(2);
+    mock.mockReset();
+  });
+
+  it('will not rerender the component if liveUpdate prop is set to false, and a flag is changed after initial load', () => {
+    const mock = jest.spyOn(Feature.prototype, 'render').mockImplementation(() => null);
+    const wrapper = shallow(
+      <Feature flags={ { isLDReady: true } } liveUpdate={ false } >
+        <div id="match">Hello</div>
+      </Feature>
+    );
+    
+    expect(Feature.prototype.render).toHaveBeenCalledTimes(1);
+    wrapper.setProps({ flags: { testFlag: false } });
+    expect(Feature.prototype.render).toHaveBeenCalledTimes(1);
+    mock.mockReset();
   });
 });
