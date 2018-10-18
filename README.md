@@ -81,12 +81,13 @@ Boom! `ld-redux-components` is working! Notice how there is no need to connect y
 
 #### props
 
-| name        | type                      | required | default | description                       |
-| ----------- | ------------------------- | -------- | ------- | --------------------------------- |
-| `flagName`  | string                    | `true`   | -       | name of flag stored in redux      |
-| `variation` | string, bool, array, null | `false`  | -       | value of flag                     |
-| `onReady`   | function                  | `false`  | -       | callback fired when ld connected  |
-| `waitForLD` | bool                      | `false`  | `false` | wait to render until ld connected |
+| name         | type                      | required | default | description                       |
+| -----------  | ------------------------- | -------- | ------- | --------------------------------- |
+| `flagName`   | string                    | `true`   | -       | name of flag stored in redux      |
+| `variation`  | string, bool, array, null | `false`  | -       | value of flag                     |
+| `onReady`    | function                  | `false`  | -       | callback fired when ld connected  |
+| `waitForLD`  | bool                      | `false`  | `false` | wait to render until ld connected |
+| `liveUpdate` | bool                      | `false`  | `true`  | rerender after initial LD load    |
 
 #### Usage Details
 
