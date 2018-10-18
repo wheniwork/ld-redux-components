@@ -21,6 +21,18 @@ export class Feature extends Component {
     }
   }
 
+  shouldComponentUpdate(nextProps) {
+    const { liveUpdate } = this.props;
+    if (liveUpdate || nextProps.liveUpdate) {
+      return true;
+    }
+    //either on initial load, or the first load
+    if (!this.props.flags.isLDReady) {
+      return true;
+    }
+    return false;
+  }
+
   render() {
     const { children, flagId, variation, flags, waitForLD } = this.props;
 
@@ -53,6 +65,11 @@ Feature.propTypes = {
   flags: PropTypes.object.isRequired,
   onReady: PropTypes.func,
   waitForLD: PropTypes.bool,
+  liveUpdate: PropTypes.bool,
+};
+
+Feature.defaultProps = {
+  liveUpdate: true,
 };
 
 const mapStateToProps = state => ({
