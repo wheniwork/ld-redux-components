@@ -11,6 +11,7 @@ export class LDRComponentConfig {
     this._settings = {
       ...this._settings,
       reduxKey: options.reduxKey,
+      store: options.store,
     };
   }
 }
